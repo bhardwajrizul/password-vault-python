@@ -300,19 +300,19 @@ def vaultScreen():
             probab=model.predict_proba(x_pred)
 
             if(predicted==1):
-                lbl_extra = Label(window, text="Average Password Strength", font=("Helvatica", 8))
+                lbl_extra = Label(window, text="Average Password Strength", font=("Helvatica", 10), bg="orange")
                 lbl_extra.grid(column=3, row=(i+3), pady=10, padx=50)
     
             if(predicted==0):
-                lbl_extra = Label(window, text="Password is Very Weak", font=("Helvatica", 8))
+                lbl_extra = Label(window, text="Password is Very Weak", font=("Helvatica", 10), bg="red")
                 lbl_extra.grid(column=3, row=(i+3), pady=10, padx=50)
 
             if(predicted==2):
                 if probab[0][2]>0.85:
-                    lbl_extra = Label(window, text="Password is Very strong", font=("Helvatica", 8))
+                    lbl_extra = Label(window, text="Password is Very strong", font=("Helvatica", 10), bg="green")
                     lbl_extra.grid(column=3, row=(i+3), pady=10, padx=50)                    
                 else:
-                    lbl_extra = Label(window, text="Strong Password", font=("Helvatica", 8))
+                    lbl_extra = Label(window, text="Strong Password", font=("Helvatica", 10), bg="green")
                     lbl_extra.grid(column=3, row=(i+3), pady=10, padx=50)
 
 
